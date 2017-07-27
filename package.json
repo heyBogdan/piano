@@ -4,7 +4,7 @@
   "description": "This is implementation of piano app via react+redux",
   "main": "index.js",
   "scripts": {
-    "webpack":"./node_modules/.bin/webpack-dev-server --hot --inline",
+    "webpack": "./node_modules/.bin/webpack-dev-server --hot --inline",
     "build": "set NODE_ENV=production && webpack -p"
   },
   "author": "hey_bogdan",
@@ -16,6 +16,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
+    "redux": "^3.7.2",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.6.1"
   },
