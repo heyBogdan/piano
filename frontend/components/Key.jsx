@@ -2,20 +2,26 @@ import React from "react";
 
 class Key extends React.Component{
     render(){
-        if(this.props.type === 'black'){
+
+        if(this.props.note.indexOf('#') == -1){
             return (
-                <div className="keybord__key">  
-                    Чёрная!
+                <div className="keyboard__key">  
+                    Белая
                 </div>
             )     
         }else{
              return (
-                <div className="keybord__key">  
-                    Другая!
+                <div className="keyboard__key">  
+                    Чёрная
                 </div> 
             )              
         }
     }
 }
+
+Key.contextTypes = {
+    store: React.PropTypes.object
+};
+
 
 export default Key

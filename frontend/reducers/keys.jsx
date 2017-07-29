@@ -1,4 +1,4 @@
-const keys = (state = null, action) => {
+const keys = (state = 0, action) => {
     switch (action.type){
         case 'SET_ACTIVE_KEY' :
             return action.id;
