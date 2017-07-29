@@ -4,6 +4,7 @@ import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import pianoApp from './reducers/index.jsx'
 import App from './components/App.jsx'
+import style from "./styles/main.scss"; 
 
 
 let store = createStore(pianoApp);

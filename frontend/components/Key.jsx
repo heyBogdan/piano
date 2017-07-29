@@ -6,13 +6,11 @@ class Key extends React.Component{
         if(this.props.note.indexOf('#') == -1){
             return (
                 <div className="keyboard__key">  
-                    Белая
                 </div>
             )     
         }else{
              return (
-                <div className="keyboard__key">  
-                    Чёрная
+                <div className="keyboard__key keyboard__key--sharp">  
                 </div> 
             )              
         }

@@ -12,7 +12,7 @@ class Keyboard extends React.Component{
             )
         )
         return (
-            <div>  
+            <div className="main-wrapper__keyboard">  
                 {octaves}
             </div>
         )     

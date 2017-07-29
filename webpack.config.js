@@ -2,6 +2,7 @@
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -24,19 +25,30 @@ module.exports = {
     plugins:[
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
-        })
+        }),
     ],
 
     module:{
-        rules:[{
-            test:/\.jsx$/,
-            exclude: /(node_modules)/,
-            use:[
-                {
-                  loader:'babel-loader'  
-                }
-            ]
-        }]
+
+        rules:[
+            {
+                test:/\.jsx$/,
+                exclude: /(node_modules)/,
+                use:[
+                    {
+                      loader:'babel-loader'  
+                    }
+                ]
+            },
+            {
+              test: /\.scss$/,
+              use: [
+                { loader: "style-loader" },
+                { loader: "css-loader" },
+                { loader: "sass-loader" }
+              ]
+            }
+        ]
     }
 
 };
