@@ -13,7 +13,7 @@ body{
     justify-content:space-around;
     text-align:center;
     &__keyboard{
-        width: 50%;
+        width: 35%;
         margin: 0 auto;
         position: relative;
         box-shadow: 0 20px 100px 1px rgba(0, 0, 0, 0.1);
@@ -24,7 +24,7 @@ body{
         position: relative;
         display:inline-block;
         width: calc(calc(100%/7) - 2px);
-        padding-bottom: 50%;
+        padding-bottom: 55%;
         background: #f8f8f8;
         vertical-align: top;
         cursor: pointer;
@@ -35,6 +35,10 @@ body{
         &:hover{
             border: 1px solid #ff4200!important;
             transition:0.1s;
+        }
+        &--active{
+            background-color: #ff4200 !important;
+            transition:all 0.1s;
         }
         &--sharp{
             position: absolute;
