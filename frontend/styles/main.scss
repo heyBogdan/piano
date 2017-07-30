@@ -13,9 +13,7 @@ body{
     justify-content:space-around;
     text-align:center;
     &__keyboard{
-        width: 64%;
-        display:flex;
-        flex-direction:row;
+        width: 50%;
         margin: 0 auto;
         position: relative;
         box-shadow: 0 20px 100px 1px rgba(0, 0, 0, 0.1);
@@ -24,7 +22,8 @@ body{
 .keyboard{
     &__key{
         position: relative;
-        width: 14%;
+        display:inline-block;
+        width: calc(calc(100%/7) - 2px);
         padding-bottom: 50%;
         background: #f8f8f8;
         vertical-align: top;
@@ -44,6 +43,7 @@ body{
             background: #222222;
             transform-origin: center top;
             transform: translateX(-50%) scale(0.59);
+            -webkit-transform: translateX(-50%) scale(0.59);
             box-shadow: 0 5px 15px 3px rgba(0, 0, 0, 0.2);
             border-radius: 8px;
             &:hover{
