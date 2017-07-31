@@ -11,3 +11,10 @@ export const setOctaveNum = octaveNum => {
         octaveNum
     }
 }
+
+export const setAppStatus = status => {
+    return {
+        type: 'SET_STATUS',
+        status
+    }
+}

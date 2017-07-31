@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import Key from './Key.jsx';
-import {setActiveKey} from '../actions/index.jsx'
+import {setActiveKey} from '../actions/index.js'
 import octaveNotes from '../constants/octaveNotes.js'
 
 class Keyboard extends React.Component{
@@ -12,7 +12,7 @@ class Keyboard extends React.Component{
             )
         )
         return (
-            <div className="main-wrapper__keyboard">  
+            <div className="keyboard">  
                 {octaves}
             </div>
         )     

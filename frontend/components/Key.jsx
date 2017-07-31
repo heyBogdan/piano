@@ -1,6 +1,11 @@
 import React from "react";
 import {connect} from "react-redux";
-import {setActiveKey} from "../actions/index.jsx"
+import {setActiveKey} from "../actions/index.js"
+
+const playKey = (audio) => {
+    audio.load();
+    audio.play();
+}
 
 class Key extends React.Component{
     constructor(props){
@@ -8,9 +13,9 @@ class Key extends React.Component{
         this.keyClickHandler = this.keyClickHandler.bind(this);
     }
     keyClickHandler(e){
+        playKey(e.target.firstElementChild);
+        
         const {store} = this.context;
-        e.target.firstElementChild.load();
-        e.target.firstElementChild.play();
         store.dispatch(setActiveKey(e.target.getAttribute('data-note')));
     }
     render(){

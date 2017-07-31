@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
-import pianoApp from './reducers/index.jsx'
+import pianoApp from './reducers/index.js'
 import App from './components/App.jsx'
 import style from "./styles/main.scss"; 
 

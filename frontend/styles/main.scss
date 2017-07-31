@@ -5,6 +5,13 @@ body{
     overflow-y:hidden;
     font-family:Roboto;
 }
+.hidden{
+    opacity:0;
+}
+.disabled{
+    pointer-events: none;
+    opacity: 0.4;
+}
 .main-wrapper{
     width:100vw;
     height:100vh;
@@ -12,14 +19,72 @@ body{
     flex-direction:column;
     justify-content:space-around;
     text-align:center;
-    &__keyboard{
-        width: 35%;
-        margin: 0 auto;
-        position: relative;
-        box-shadow: 0 20px 100px 1px rgba(0, 0, 0, 0.1);
+}
+.piano-app{
+    width: 35%;
+    margin: 0 auto;
+    &__start-button{
+        margin:25px auto 0;
+        width: 250px;
+        height: 100px;
+        background:url('/public/images/buttons/start.def.png') center no-repeat;
+        background-size: cover;
+        cursor:pointer;
+        &:hover{
+            background:url('/public/images/buttons/start.hover.png') center no-repeat;
+            background-size: cover;
+            transition:0.2s;
+        }
+        &:active{
+            background:url('/public/images/buttons/start.active.png') center no-repeat;
+            background-size: cover;
+            transition:0s;            
+        }
     }
 }
+.control-buttons-wrapper{
+    display:flex;
+    justify-content:space-around;
+    &__button{
+        margin-bottom:15px;
+        width:125px;
+        height:125px;
+        cursor:pointer;
+        transition:0.2s;
+        &--play{
+            background:url('/public/images/buttons/play.def.png') center no-repeat;
+            background-size: contain;
+            &:hover{
+                background:url('/public/images/buttons/play.hover.png') center no-repeat;
+                background-size: contain;
+                transition:0.2s;
+            }
+            &:active{
+                background:url('/public/images/buttons/play.active.png') center no-repeat;
+                background-size: contain;
+                transition:0s;
+            }
+        }
+        &--answer{
+            background:url('/public/images/buttons/answer.def.png') center no-repeat;
+            background-size: contain;
+            &:hover{
+                background:url('/public/images/buttons/answer.hover.png') center no-repeat;
+                background-size: contain;
+                transition:0.2s;
+            }
+            &:active{
+                background:url('/public/images/buttons/answer.active.png') center no-repeat;
+                background-size: contain;
+                transition:0s;
+            }            
+        }
+    }
+}
+
 .keyboard{
+    position: relative;
+    box-shadow: 0 20px 100px 1px rgba(0, 0, 0, 0.1);
     &__key{
         position: relative;
         display:inline-block;
