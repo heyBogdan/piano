@@ -18,8 +18,10 @@ class Key extends React.Component{
         const {store} = this.context;
         store.dispatch(setActiveKey(e.target.getAttribute('data-note')));
     }
+
     render(){
         return (
+
                 <div className={
                         "keyboard__key " + ((this.props.note.indexOf('1') == -1) ? "" : "keyboard__key--sharp ") +
                          ((this.props.activeKey === this.props.note) ? "keyboard__key--active" : "")
@@ -28,8 +30,9 @@ class Key extends React.Component{
                      data-note={this.props.note}>  
                     <audio id={"note-" + this.props.note}>
                         <source src={"/public/Notes/" + this.props.note + ".mp3"} type='audio/mpeg; codecs="mp3"' />
-                    </audio>            
+                    </audio>          
                 </div>
+
         )     
     }
 }
@@ -40,7 +43,8 @@ Key.contextTypes = {
 
 function mapStateToProps (state){
     return{
-        activeKey:state.activeKey
+        activeKey:state.activeKey,
+        noteToPlay:state.noteToPlay
     }
 }
 

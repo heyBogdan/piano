@@ -1,6 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {setAppStatus} from '../actions/index.js'
+import octaveNotes from '../constants/octaveNotes.js'
+import {setAppStatus, setActiveKey, setNoteToPlay} from '../actions/index.js'
+
+const generateRandNote = () => (Math.round(Math.random()*octaveNotes.length))
 
 class StartButton extends React.Component{
     constructor(props){
@@ -9,7 +12,9 @@ class StartButton extends React.Component{
     }
     startButtonClickHandler(){
         const {store} = this.context;
-        store.dispatch(setAppStatus('testPassing'));
+        store.dispatch(setAppStatus('start'));
+        store.dispatch(setActiveKey('null'));
+        store.dispatch(setNoteToPlay(octaveNotes[generateRandNote()]));
     }
     render(){
         return(

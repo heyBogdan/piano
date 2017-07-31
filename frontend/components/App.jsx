@@ -3,6 +3,7 @@ import PlayButton from "./PlayButton.jsx";
 import AnswerButton from "./AnswerButton.jsx";
 import Keyboard from './Keyboard.jsx';
 import StartButton from './StartButton.jsx';
+import NextButton from './NextButton.jsx'
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
                 <div className="control-buttons-wrapper">
                     <PlayButton />
                     <AnswerButton />
+                    <NextButton />
                 </div>
                 <Keyboard />
                 <StartButton />

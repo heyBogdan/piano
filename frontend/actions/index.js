@@ -18,3 +18,10 @@ export const setAppStatus = status => {
         status
     }
 }
+
+export const setNoteToPlay = noteToPlay => {
+    return {
+        type: 'SET_NOTE_TO_PLAY',
+        noteToPlay
+    }
+}

@@ -1,12 +1,14 @@
 import {combineReducers} from 'redux'
-import octave from './octaves.js'
-import activeKey from './keys.js'
-import appStatus from './appStatus.js'
+import octave from './octaves'
+import activeKey from './keys'
+import appStatus from './appStatus'
+import noteToPlay from './noteToPlay'
 
 const pianoApp = combineReducers({
     octave,
     activeKey,
-    appStatus
+    appStatus,
+    noteToPlay
 }) 
 
 export default pianoApp

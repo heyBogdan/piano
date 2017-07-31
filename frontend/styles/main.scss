@@ -8,10 +8,6 @@ body{
 .hidden{
     opacity:0;
 }
-.disabled{
-    pointer-events: none;
-    opacity: 0.4;
-}
 .main-wrapper{
     width:100vw;
     height:100vh;
@@ -65,6 +61,12 @@ body{
                 transition:0s;
             }
         }
+        &--play-disabled{
+            background:url('/public/images/buttons/play.disable.png') center no-repeat;
+            background-size: contain;
+            pointer-events: none;
+            cursor:default;
+        }
         &--answer{
             background:url('/public/images/buttons/answer.def.png') center no-repeat;
             background-size: contain;
@@ -79,6 +81,32 @@ body{
                 transition:0s;
             }            
         }
+        &--answer-disabled{
+            background:url('/public/images/buttons/answer.disable.png') center no-repeat;
+            background-size: contain;            
+            pointer-events: none;
+            cursor:default;
+        }
+        &--next{
+            background:url('/public/images/buttons/def.png') center no-repeat;
+            background-size: contain;
+            &:hover{
+                background:url('/public/images/buttons/hov.png') center no-repeat;
+                background-size: contain;
+                transition:0.2s;
+            }
+            &:active{
+                background:url('/public/images/buttons/active.png') center no-repeat;
+                background-size: contain;
+                transition:0s;
+            }            
+        }
+        &--next-disabled{
+            background:url('/public/images/buttons/disable.png') center no-repeat;
+            background-size: contain;            
+            pointer-events: none;
+            cursor:default;
+        }        
     }
 }
 
