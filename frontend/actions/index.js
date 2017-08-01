@@ -25,3 +25,10 @@ export const setNoteToPlay = noteToPlay => {
         noteToPlay
     }
 }
+
+export const playNote = playingNote => {
+    return{
+        type: 'PLAY_NOTE',
+        playingNote
+    }
+}

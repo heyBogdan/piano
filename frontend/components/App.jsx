@@ -4,6 +4,7 @@ import AnswerButton from "./AnswerButton.jsx";
 import Keyboard from './Keyboard.jsx';
 import StartButton from './StartButton.jsx';
 import NextButton from './NextButton.jsx'
+import AudioSources from './AudioSources.jsx'
 
 const App = () => {
 
@@ -18,6 +19,7 @@ const App = () => {
                 </div>
                 <Keyboard />
                 <StartButton />
+                <AudioSources />
             </div>
             <p>Made by <a href="https://github.com/heyBogdan">@hey_bogdan</a></p>
         </div>
