@@ -32,3 +32,10 @@ export const playNote = playingNote => {
         playingNote
     }
 }
+
+export const setQuestionNumber = question => {
+    return{
+        type: 'SET_QUESTION_NUMBER',
+        question
+    }
+}

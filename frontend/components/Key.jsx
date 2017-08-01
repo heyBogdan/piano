@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
-import {setActiveKey, playNote} from "../actions/index.js"
+import {setActiveKey, playNote, setAppStatus} from "../actions/index.js"
+import playKey from "../functions/playKey.js"
 
 
 class Key extends React.Component{
@@ -11,8 +12,12 @@ class Key extends React.Component{
     keyClickHandler(e){
         const {store} = this.context;
         store.dispatch(setActiveKey(e.target.getAttribute('data-note')));
-        store.dispatch(playNote(e.target.getAttribute('data-note')));
+
+        playKey(e.target.getAttribute('data-note'));
+
+        if(this.props.appStatus == 'start') store.dispatch(setAppStatus('waitingForAnswer'))
     }
+
     render(){
         return (
                 <div className={
@@ -33,7 +38,9 @@ Key.contextTypes = {
 function mapStateToProps (state){
     return{
         activeKey:state.activeKey,
-        noteToPlay:state.noteToPlay
+        appStatus:state.appStatus,
+        noteToPlay:state.noteToPlay,
+        playNote:state.playNote
     }
 }
 
