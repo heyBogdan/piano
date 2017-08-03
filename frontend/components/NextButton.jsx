@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {setAppStatus,setActiveKey} from '../actions/index.js'
+import {setAppStatus, setActiveKey, increaseQuestionNumber} from '../actions/index.js'
 
 class NextButton extends React.Component{
     constructor(props){
@@ -9,8 +9,17 @@ class NextButton extends React.Component{
     }
     nextButtonClickHandler(){
         const {store} = this.context;
-        store.dispatch(setAppStatus('start'));
-        store.dispatch(setActiveKey(null));
+
+        if(this.props.question.number == this.props.question.quantity){
+            store.dispatch(setAppStatus('finish'));
+            store.dispatch(setActiveKey(null));
+        }else{
+
+
+            store.dispatch(increaseQuestionNumber())
+            store.dispatch(setAppStatus('start'));
+            store.dispatch(setActiveKey(null));
+        }
     }
     render(){
         return(
@@ -29,7 +38,10 @@ NextButton.contextTypes = {
 
 function mapStateToProps (state){
     return{
-        appStatus:state.appStatus
+        appStatus:state.appStatus,
+        question:state.question,
+        noteToPlay:state.noteToPlay,
+        activeKey:state.activeKey
     }
 }
 NextButton = connect(mapStateToProps)(NextButton);

@@ -22,7 +22,9 @@ class Key extends React.Component{
         return (
                 <div className={
                         "keyboard__key " + ((this.props.note.indexOf('1') == -1) ? "" : "keyboard__key--sharp ") +
-                         ((this.props.activeKey === this.props.note) ? "keyboard__key--active" : "")
+                         ((this.props.activeKey === this.props.note) ? "keyboard__key--active" : "") + 
+                         ((this.props.appStatus == 'nextQuestion') && (this.props.note == this.props.noteToPlay) ? ' keyboard__key--right':'') +
+                         ((this.props.appStatus == 'nextQuestion') && (this.props.activeKey == this.props.note) && (this.props.activeKey !== this.props.noteToPlay) ? ' keyboard__key--wrong':'')
                      }
                      onClick={this.keyClickHandler} 
                      data-note={this.props.note}>  

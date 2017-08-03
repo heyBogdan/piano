@@ -42,14 +42,21 @@ body{
     display:flex;
     justify-content:space-around;
     &__button{
-        margin-bottom:15px;
+        margin-bottom:25px;
         width:125px;
         height:125px;
         cursor:pointer;
         transition:0.2s;
+        font-size: 11px;
+        letter-spacing: 0.1rem;
+        font-weight: 300;
+        color: rgba(0,0,0,0.5);
         &--play{
             background:url('/public/images/buttons/play.def.png') center no-repeat;
             background-size: contain;
+            &::after{
+                content:"ПРОСЛУШАТЬ";
+            }
             &:hover{
                 background:url('/public/images/buttons/play.hover.png') center no-repeat;
                 background-size: contain;
@@ -70,6 +77,9 @@ body{
         &--answer{
             background:url('/public/images/buttons/answer.def.png') center no-repeat;
             background-size: contain;
+            &::after{
+                content:"ОТВЕТИТЬ";
+            }
             &:hover{
                 background:url('/public/images/buttons/answer.hover.png') center no-repeat;
                 background-size: contain;
@@ -90,6 +100,9 @@ body{
         &--next{
             background:url('/public/images/buttons/def.png') center no-repeat;
             background-size: contain;
+            &::after{
+                content:"ДАЛЕЕ";
+            }
             &:hover{
                 background:url('/public/images/buttons/hov.png') center no-repeat;
                 background-size: contain;
@@ -131,6 +144,14 @@ body{
         }
         &--active{
             background-color: #ff4200 !important;
+            transition:all 0.1s;
+        }
+        &--wrong{
+            background-color: #f43b4d!important;
+            transition:all 0.1s;            
+        }
+        &--right{
+            background-color: #29dd29 !important;
             transition:all 0.1s;
         }
         &--sharp{

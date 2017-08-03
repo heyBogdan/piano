@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {setAppStatus, setQuestionNumber} from '../actions/index.js'
+import {setAppStatus, setQuestionNumber, addRightAnswer} from '../actions/index.js'
 
 class AnswerButton extends React.Component{
     constructor(props){
@@ -9,15 +9,11 @@ class AnswerButton extends React.Component{
     }
     answerButtonClickHandler(){
         const {store} = this.context;
-        console.log(this.props.question.number,this.props.question.quantity)
-        if(this.props.question.number == this.props.question.quantity){
-            store.dispatch(setAppStatus('finish'))
-        }else{
-            store.dispatch(setAppStatus('nextQuestion'))
-            let nextQuestion = this.props.question.number++;
-            console.log(nextQuestion);
-            store.dispatch(setQuestionNumber(nextQuestion))
-        }
+        
+        if(this.props.activeKey == this.props.noteToPlay) store.dispatch(addRightAnswer());    
+        
+        store.dispatch(setAppStatus('nextQuestion'))
+
     }
     render(){
         return(
@@ -38,7 +34,9 @@ AnswerButton.contextTypes = {
 function mapStateToProps (state){
     return{
         appStatus:state.appStatus,
-        question:state.question
+        question:state.question,
+        noteToPlay:state.noteToPlay,
+        activeKey:state.activeKey
     }
 }
 AnswerButton = connect(mapStateToProps)(AnswerButton);

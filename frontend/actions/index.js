@@ -32,10 +32,17 @@ export const playNote = playingNote => {
         playingNote
     }
 }
-
-export const setQuestionNumber = question => {
+let number = 1;
+export const increaseQuestionNumber = () => {
     return{
-        type: 'SET_QUESTION_NUMBER',
-        question
+        type: 'INCREASE_QUESTION_NUMBER',
+        number:++number
     }
 }
+let rightAnswers = 0;
+export const addRightAnswer = () => {
+    return{
+        type: 'ADD_RIGHT_ANSWER',
+        rightAnswers:++rightAnswers
+    }
+} 
