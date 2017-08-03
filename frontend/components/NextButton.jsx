@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {setAppStatus, setActiveKey, increaseQuestionNumber} from '../actions/index.js'
+import octaveNotes from '../constants/octaveNotes.js'
+import generateRandNumber from '../functions/generateRandNumber.js'
+import {setAppStatus, setActiveKey, increaseQuestionNumber, setNoteToPlay} from '../actions/index.js'
 
 class NextButton extends React.Component{
     constructor(props){
@@ -14,11 +16,10 @@ class NextButton extends React.Component{
             store.dispatch(setAppStatus('finish'));
             store.dispatch(setActiveKey(null));
         }else{
-
-
             store.dispatch(increaseQuestionNumber())
             store.dispatch(setAppStatus('start'));
             store.dispatch(setActiveKey(null));
+            store.dispatch(setNoteToPlay(octaveNotes[generateRandNumber(octaveNotes.length)]));
         }
     }
     render(){
@@ -47,3 +48,4 @@ function mapStateToProps (state){
 NextButton = connect(mapStateToProps)(NextButton);
 
 export default NextButton
+

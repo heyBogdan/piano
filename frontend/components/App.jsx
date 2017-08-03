@@ -5,16 +5,27 @@ import AnswerButton from "./AnswerButton.jsx";
 import Keyboard from './Keyboard.jsx';
 import StartButton from './StartButton.jsx';
 import NextButton from './NextButton.jsx'
+import AudioPlayer from './AudioPlayer.jsx'
 
 class App extends React.Component {
     render(){
         let renderBlock; 
         switch (this.props.appStatus){
-            case 'introduction': 
-                renderBlock = <div>Привет</div>
+            case 'preStart': 
+                renderBlock = (
+                    <div className="modal-window">
+                        <p className="modal-window__caption">Прослушайте аудиосэмл, выберите идентичную ноту, подтвердите выбор. Старайтесь сделать как можно меньше попыток при выборе ноты!</p>
+                        <AudioPlayer />
+                        <StartButton /> 
+                    </div>
+                )  
                 break
            case 'finish': 
-                renderBlock = <div>Пока</div>
+                renderBlock = (
+                    <div className="modal-window">
+                        <p className="modal-window__caption">Отличная Работа!</p>
+                    </div>
+                )
                 break
            
            default: renderBlock = (
@@ -25,16 +36,14 @@ class App extends React.Component {
                        <NextButton />
                    </div>
                    <Keyboard />
-                   <StartButton />
                </div>);
                break
         }     
-        console.log(renderBlock); 
         return(
             <div className="main-wrapper">
                 <h3>PianoApp</h3>
                 {renderBlock}
-                <p>Made by <a href="https://github.com/heyBogdan">@hey_bogdan</a></p>
+                <p>Made by Bokhonov Bogdan</p>
             </div>
         )   
     }
