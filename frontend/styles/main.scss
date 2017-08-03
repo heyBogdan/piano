@@ -2,7 +2,6 @@ body{
     background-color: rgba(241, 247, 252, 1);
     margin:0;
     overflow-x:hidden;
-    overflow-y:hidden;
     font-family:Roboto;
 }
 .hidden{
@@ -10,7 +9,7 @@ body{
 }
 .main-wrapper{
     width:100vw;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:space-around;
@@ -24,9 +23,9 @@ body{
         display: block;
         text-decoration: none;
         margin: 0 auto;
-        width: 12vw;
-        height: 5vh;
-        line-height: 5vh;
+        width: 200px;
+        height: 50px;
+        line-height: 50px;
         border: 2px solid #ff4200;
         border-radius: 35px;
         font-size: 1.5rem;
@@ -202,5 +201,16 @@ body{
     }
     100%{
         opacity:1;
+    }
+}
+
+@media (max-width:1200px){
+    .modal-window, .piano-app{
+        width:60%;
+    }
+}
+@media (max-width:768px){
+    .modal-window, .piano-app{
+        width:90%;
     }
 }
