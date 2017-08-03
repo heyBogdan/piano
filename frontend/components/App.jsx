@@ -23,7 +23,19 @@ class App extends React.Component {
            case 'finish': 
                 renderBlock = (
                     <div className="modal-window">
-                        <p className="modal-window__caption">Отличная Работа!</p>
+                        <p className="modal-window__caption">
+                          Вы ответили правильно на {this.props.question.rightAnswers} 
+                           из {this.props.question.quantity} вопросов!
+                        </p>
+                        <p className="modal-window__caption">
+                          При этом среднее количество попыток при ответе на вопрос
+                          равняется {} 
+                        </p>
+                        <p className="modal-window__caption">
+                          Помните, что слух, особенно относительный, отлично поддаётся тренировке.
+                          Попробуйте ещё раз!
+                        </p>
+                        <StartButton />   
                     </div>
                 )
                 break
@@ -56,7 +68,8 @@ App.contextTypes = {
 
 function mapStateToProps (state){
     return{
-        appStatus:state.appStatus
+        appStatus:state.appStatus,
+        question:state.question
     }
 }
 App = connect(mapStateToProps)(App);
