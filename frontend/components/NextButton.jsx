@@ -24,11 +24,10 @@ class NextButton extends React.Component{
     }
     render(){
         return(
-            <div className={"control-buttons-wrapper__button control-buttons-wrapper__button--next" +
-                 ((this.props.appStatus == 'nextQuestion') ? '' : ' control-buttons-wrapper__button--next-disabled')}
-                 onClick={this.nextButtonClickHandler} >
-                
-            </div>
+            <button className={"buttons-wrapper__button buttons-wrapper__button--next"}
+                    onClick={this.nextButtonClickHandler} 
+                    disabled={this.props.appStatus == "nextQuestion" ? '' : 'true'}>
+            </button>
         )    
     }
 }

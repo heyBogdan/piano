@@ -30,7 +30,7 @@ class App extends React.Component {
            
            default: renderBlock = (
                <div className="piano-app">
-                   <div className="control-buttons-wrapper">
+                   <div className="buttons-wrapper">
                        <PlayButton />
                        <AnswerButton />
                        <NextButton />

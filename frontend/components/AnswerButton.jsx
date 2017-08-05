@@ -17,12 +17,10 @@ class AnswerButton extends React.Component{
     }
     render(){
         return(
-            <div className={"control-buttons-wrapper__button control-buttons-wrapper__button--answer" +
-                 ((this.props.appStatus == 'waitingForAnswer') ? '' : ' control-buttons-wrapper__button--answer-disabled')} 
-                 onClick={this.answerButtonClickHandler}
-            >
-                
-            </div>
+            <button className={"buttons-wrapper__button buttons-wrapper__button--answer"} 
+                    onClick={this.answerButtonClickHandler}
+                    disabled={this.props.appStatus == "waitingForAnswer" ? '' : 'true'}>
+            </button>
         )    
     }
 }

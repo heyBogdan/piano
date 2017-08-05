@@ -14,10 +14,9 @@ class PlayButton extends React.Component{
     }
     render(){
         return(
-            <div className={"control-buttons-wrapper__button control-buttons-wrapper__button--play" +
-                 (this.props.appStatus == 'preStart' ? ' control-buttons-wrapper__button--play-disabled' : '')}
-                 onClick={this.playButtonClickHandler}>
-            </div>
+            <button className={"buttons-wrapper__button buttons-wrapper__button--play"}
+                    onClick={this.playButtonClickHandler}>
+            </button>
         )    
     }
 }
