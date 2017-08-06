@@ -32,6 +32,15 @@ module.exports = {
 
         rules:[
             {
+                test:/\.js$/,
+                exclude: /(node_modules)/,
+                use:[
+                    {
+                      loader:'babel-loader'  
+                    }
+                ]
+            },
+            {
                 test:/\.jsx$/,
                 exclude: /(node_modules)/,
                 use:[
@@ -39,6 +48,14 @@ module.exports = {
                       loader:'babel-loader'  
                     }
                 ]
+            },
+            {
+                test: /\.es6$/,
+                exclude: /node_modules/,
+                loader: "babel-loader",
+                query: {
+                    presets: ["es2015"]
+                }
             },
             {
               test: /\.scss$/,
@@ -54,14 +71,14 @@ module.exports = {
 
 };
 
-// if (NODE_ENV == 'production'){
-//     module.exports.plugins.push(
-//         new webpack.optimize.UglifyJSPlugin({
-//             compress:{
-//                 warnings: false,
-//                 drop_console: true,
-//                 unsafe: true
-//             }
-//         })
-//     )
-// }
+if (NODE_ENV == 'production'){
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJSPlugin({
+            compress:{
+                warnings: false,
+                drop_console: true,
+                unsafe: true
+            }
+        })
+    )
+}
