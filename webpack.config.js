@@ -54,14 +54,14 @@ module.exports = {
 
 };
 
-if (NODE_ENV == 'production'){
-    module.exports.plugins.push(
-        new webpack.optimize.UglifyJSPlugin({
-            compress:{
-                warnings: false,
-                drop_console: true,
-                unsafe: true
-            }
-        })
-    )
-}
+// if (NODE_ENV == 'production'){
+//     module.exports.plugins.push(
+//         new webpack.optimize.UglifyJSPlugin({
+//             compress:{
+//                 warnings: false,
+//                 drop_console: true,
+//                 unsafe: true
+//             }
+//         })
+//     )
+// }
