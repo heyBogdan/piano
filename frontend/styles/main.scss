@@ -148,7 +148,7 @@ body{
         vertical-align: top;
         cursor: pointer;
         border-radius: 4px;
-        transition: 0.5s;
+        transition: 0.1s;
         color: rgba(255, 255, 255, 0.3);
         border: 1px solid #d6d6d6!important;
         &:hover{
@@ -157,15 +157,15 @@ body{
         }
         &--active{
             background-color: #ff4200 !important;
-            transition:all 0.1s;
+
         }
         &--wrong{
             background-color: #f43b4d!important;
-            transition:all 0.1s;            
+         
         }
         &--right{
             background-color: #29dd29 !important;
-            transition:all 0.1s;
+
         }
         &--sharp{
             position: absolute;
