@@ -79,7 +79,7 @@ body{
         letter-spacing: 0.1rem;
         font-weight: 300;
         color: rgba(0,0,0,0.5);
-        background:url('images/buttons/sprite_buttons.png') no-repeat;
+        background:url('/piano/public/images/buttons/sprite_buttons.png') no-repeat;
         background-size: cover;
         &::after{
             display:block;
@@ -204,7 +204,7 @@ body{
         display:inline-block;
         width:20px;
         height:20px;
-        background:url("images/icons/sprite_icons.png") no-repeat;
+        background:url("/piano/public/images/icons/sprite_icons.png") no-repeat;
         background-size:cover;
         margin:0 15px;
         transition:0.3s;
