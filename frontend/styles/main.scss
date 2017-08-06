@@ -14,27 +14,30 @@ body{
     flex-direction:column;
     justify-content:space-around;
     text-align:center;
+    &__title{
+        font-weight: 400;
+        letter-spacing: 5px;
+    }
 }
 .piano-app{
     width: 30%;
     margin: 0 auto;
-    animation: fadeIn 2s;
     &__start-button{
         display: block;
         text-decoration: none;
         text-transform:uppercase;
-        margin: 0 auto;
-        width: 200px;
-        height: 50px;
-        line-height: 50px;
-        border: 2px solid #ff4200;
+        margin: 40px auto;
+        width: 185px;
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid #ff4200;
         border-radius: 35px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-family: Roboto;
-        font-weight: 700;
+        font-weight: 500;
         color: #ff4200;
         text-align: center;
-        letter-spacing: 0.1vw;
+        letter-spacing: 0.3vw;
         cursor: pointer;
         transition: all 0.3s;
         &:hover{
@@ -51,12 +54,12 @@ body{
     animation: fadeIn 1s;
     &__caption{
         font-weight:300;
-        font-size:18px;
+        font-size:17px;
         letter-spacing:0.05vw;
         line-height:1.5;
     }
     &__player{
-        margin:35px 0;
+        margin-top:15px;
         border-radius: 35px;
     }
 
@@ -64,6 +67,7 @@ body{
 .buttons-wrapper{
     display:flex;
     justify-content:space-around;
+    animation: fadeIn 1s;
     &__button{
         margin-bottom:25px;
         width:125px;
@@ -82,48 +86,48 @@ body{
             margin: -65px 0 0 0;
         }
         &--play{
-            background-position:0px -1125px;
+            background-position:0px 81.81%;
             &::after{
                 content:"ПРОСЛУШАТЬ";
             }
             &:hover{
-                background-position:0px -1375px;
+                background-position:0px 100%;
             }
             &:active{
-                background-position:0px -1000px;
+                background-position:0px 72.72%;
             }
             &:disabled{
-                background-position:0px -1250px;
+                background-position:0px 90.09%;
             }
         }
         &--answer{
-            background-position:0px -125px;
+            background-position:0px 9.09%;
             &::after{
                 content:"ОТВЕТИТЬ";
             }
             &:hover{
-                background-position:0px -375px;
+                background-position:0px 27.27%;
             }
             &:active{
-                background-position:0px -0px;
+                background-position:0px 0%;
             }
             &:disabled{
-                background-position:0px -250px;
+                background-position:0px 18.18%;
             }
         }
         &--next{
-            background-position:0px -625px;
+            background-position:0px 45.45%;
             &::after{
                 content:"ДАЛЕЕ";
             }
             &:hover{
-                background-position:0px -875px;
+                background-position:0px 63.63%;
             }
             &:active{
-                background-position:0px -500px;
+                background-position:0px 36.36%;
             }
             &:disabled{
-                background-position:0px -750px;
+                background-position:0px 54.54%;
             }
         }        
     }
@@ -132,6 +136,8 @@ body{
 .keyboard{
     position: relative;
     box-shadow: 0 20px 100px 1px rgba(0, 0, 0, 0.1);
+    margin: 0 0 25px;
+    animation: fadeIn 1s;
     &__key{
         position: relative;
         display:inline-block;
@@ -178,6 +184,57 @@ body{
         }
     }
 }
+.footer{
+    p{
+        margin:5px 0;
+    }
+    &__caption{
+        letter-spacing: 0.05vw;
+        font-size: 12px;
+    }
+    &__contacts{
+        color:rgba(0,0,0,0.5);
+        font-size:0.7rem;
+    }
+}
+
+.social-networks{
+    margin: 15px 0 25px;
+    &__button{
+        display:inline-block;
+        width:20px;
+        height:20px;
+        background:url("/public/images/icons/sprite_icons.png") no-repeat;
+        background-size:cover;
+        margin:0 15px;
+        transition:0.3s;
+        &:hover{
+            transform:scale(1.1);
+            transition:0.3s;
+        }
+        &--gh{
+            background-position:0 50%;
+        }
+        &--fb{
+            background-position:0 0;
+        }
+        &--tw{
+            background-position:0 100%;
+        }
+    }
+}
+
+@keyframes delayedFadeIn{
+    0%{
+        opacity:0;
+    }
+    70%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
 
 @keyframes fadeIn{
     0%{
@@ -196,5 +253,15 @@ body{
 @media (max-width:768px){
     .modal-window, .piano-app{
         width:90%;
+    }
+    .buttons-wrapper{
+        &__button{
+            width:90px;
+            height:90px;
+            &::after{
+                margin: -45px 0 0 0;
+                font-size: 7px;
+            }
+        }
     }
 }

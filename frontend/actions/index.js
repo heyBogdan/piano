@@ -46,3 +46,19 @@ export const addRightAnswer = () => {
         rightAnswers:++rightAnswers
     }
 } 
+let attemptsNumber = 0;
+export const addAttempt = () => {
+    return{
+        type: 'ADD_ATTEMPT',
+        attemptsNumber:++attemptsNumber
+    }
+} 
+
+export const resetQuestion = () => {
+    attemptsNumber = 0;
+    number = 1;
+    rightAnswers = 0;
+    return{
+        type:'RESET_QUESTION'
+    }
+}

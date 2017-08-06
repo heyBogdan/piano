@@ -15,7 +15,7 @@ class PlayButton extends React.Component{
     render(){
         return(
             <button className={"buttons-wrapper__button buttons-wrapper__button--play"}
-                    onClick={this.playButtonClickHandler}>
+                    onMouseDown={this.playButtonClickHandler}>
             </button>
         )    
     }

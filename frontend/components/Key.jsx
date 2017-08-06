@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {setActiveKey, playNote, setAppStatus} from "../actions/index.js"
+import {setActiveKey, playNote, setAppStatus, addAttempt} from "../actions/index.js"
 import playKey from "../functions/playKey.js"
 
 
@@ -12,7 +12,7 @@ class Key extends React.Component{
     keyClickHandler(e){
         const {store} = this.context;
         store.dispatch(setActiveKey(e.target.getAttribute('data-note')));
-
+        store.dispatch(addAttempt());
         playKey(e.target.getAttribute('data-note'));
 
         if(this.props.appStatus == 'start') store.dispatch(setAppStatus('waitingForAnswer'))

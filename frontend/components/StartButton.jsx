@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import octaveNotes from '../constants/octaveNotes.js'
 import generateRandNumber from '../functions/generateRandNumber.js'
-import {setAppStatus, setActiveKey, setNoteToPlay} from '../actions/index.js'
+import {setAppStatus, setActiveKey, setNoteToPlay, resetQuestion} from '../actions/index.js'
 
 class StartButton extends React.Component{
     constructor(props){
@@ -13,6 +13,7 @@ class StartButton extends React.Component{
         const {store} = this.context;
         store.dispatch(setAppStatus('start'));
         store.dispatch(setActiveKey('null'));
+        store.dispatch(resetQuestion());
         store.dispatch(setNoteToPlay(octaveNotes[generateRandNumber(octaveNotes.length)]));
     }
     render(){
@@ -31,7 +32,8 @@ StartButton.contextTypes = {
 
 function mapStateToProps (state){
     return{
-        appStatus:state.appStatus
+        appStatus:state.appStatus,
+        question:state.question
     }
 }
 StartButton = connect(mapStateToProps)(StartButton);
