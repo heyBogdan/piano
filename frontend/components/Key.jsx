@@ -26,7 +26,7 @@ class Key extends React.Component{
                          ((this.props.appStatus == 'nextQuestion') && (this.props.note == this.props.noteToPlay) ? ' keyboard__key--right':'') +
                          ((this.props.appStatus == 'nextQuestion') && (this.props.activeKey == this.props.note) && (this.props.activeKey !== this.props.noteToPlay) ? ' keyboard__key--wrong':'')
                      }
-                     onClick={this.keyClickHandler} 
+                     onMouseDown={this.keyClickHandler} 
                      data-note={this.props.note}>  
                 </div>
         )     
