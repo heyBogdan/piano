@@ -1,5 +1,6 @@
 *{
-  user-select: none;
+  user-select: none!important;
+  -webkit-user-select:none!important;
 }
 body{
     background-color: rgba(241, 247, 252, 1);
