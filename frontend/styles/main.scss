@@ -21,6 +21,12 @@ body{
         font-weight: 400;
         letter-spacing: 5px;
     }
+    &__counter{
+        margin-top: 45px;
+        font-size: 14px;
+        letter-spacing: 0.05vw;
+        font-weight: 300;
+    }
 }
 .piano-app{
     width: 30%;

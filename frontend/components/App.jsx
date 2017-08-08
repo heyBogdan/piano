@@ -16,7 +16,7 @@ class App extends React.Component {
             case 'preStart': 
                 renderBlock = (
                     <div className="modal-window">
-                        <p className="modal-window__caption">123Прослушайте аудиосэмл, выберите идентичную ноту, подтвердите выбор. Старайтесь сделать как можно меньше попыток при выборе ноты!</p>
+                        <p className="modal-window__caption">Прослушайте аудиосэмл, выберите идентичную ноту, подтвердите выбор. Старайтесь сделать как можно меньше попыток при выборе ноты!</p>
                         <AudioPlayer />
                         <StartButton /> 
                     </div>

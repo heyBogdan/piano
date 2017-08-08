@@ -4,14 +4,14 @@ import {connect} from 'react-redux';
 class Counter extends React.Component {
     render(){   
         return(
-            <div className="main-wrapper">
-                вопрос {this.question.number} из {this.question.quantity} 
+            <div className="main-wrapper__counter">
+                вопрос {this.props.question.number} из {this.props.question.quantity} 
             </div>
         )   
     }
 }
 
-App.contextTypes = {
+Counter.contextTypes = {
     store: React.PropTypes.object
 };
 
