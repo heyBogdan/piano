@@ -50,14 +50,6 @@ module.exports = {
                 ]
             },
             {
-                test: /\.es6$/,
-                exclude: /node_modules/,
-                loader: "babel-loader",
-                query: {
-                    presets: ["es2015"]
-                }
-            },
-            {
               test: /\.scss$/,
               use: [
                 { loader: "style-loader" },

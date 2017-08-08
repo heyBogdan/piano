@@ -7,6 +7,7 @@ import PlayButton from "./PlayButton.jsx";
 import AnswerButton from "./AnswerButton.jsx";
 import Keyboard from './Keyboard.jsx';
 import NextButton from './NextButton.jsx';
+import Counter from './Counter.jsx'
 
 class App extends React.Component {
     render(){
@@ -15,7 +16,7 @@ class App extends React.Component {
             case 'preStart': 
                 renderBlock = (
                     <div className="modal-window">
-                        <p className="modal-window__caption">Прослушайте аудиосэмл, выберите идентичную ноту, подтвердите выбор. Старайтесь сделать как можно меньше попыток при выборе ноты!</p>
+                        <p className="modal-window__caption">123Прослушайте аудиосэмл, выберите идентичную ноту, подтвердите выбор. Старайтесь сделать как можно меньше попыток при выборе ноты!</p>
                         <AudioPlayer />
                         <StartButton /> 
                     </div>
@@ -48,6 +49,7 @@ class App extends React.Component {
                             <NextButton />
                         </div>
                         <Keyboard />
+                        <Counter />
                     </div>
                 );
                 break;
